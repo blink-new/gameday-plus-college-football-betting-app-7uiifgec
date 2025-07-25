@@ -2,6 +2,10 @@ import { useState, useEffect } from 'react'
 import { Header } from '@/components/layout/Header'
 import { Dashboard } from '@/components/dashboard/Dashboard'
 import { Analytics } from '@/components/analytics/Analytics'
+import LiveGames from '@/components/live/LiveGames'
+import BetHistory from '@/components/betting/BetHistory'
+import TeamComparison from '@/components/comparison/TeamComparison'
+import WeatherInjuryAnalysis from '@/components/analysis/WeatherInjuryAnalysis'
 import { blink } from '@/blink/client'
 
 function App() {
@@ -77,23 +81,29 @@ function App() {
       case 'live-games':
         return (
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div className="text-center py-16">
-              <h2 className="text-2xl font-bold text-foreground mb-4">Live Games</h2>
-              <p className="text-muted-foreground">Coming soon - Real-time game tracking and in-game betting</p>
-            </div>
+            <LiveGames />
           </div>
         )
       case 'my-bets':
         return (
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div className="text-center py-16">
-              <h2 className="text-2xl font-bold text-foreground mb-4">My Bets</h2>
-              <p className="text-muted-foreground">Coming soon - Track your betting history and active wagers</p>
-            </div>
+            <BetHistory />
           </div>
         )
       case 'analytics':
         return <Analytics />
+      case 'comparison':
+        return (
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <TeamComparison />
+          </div>
+        )
+      case 'analysis':
+        return (
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <WeatherInjuryAnalysis />
+          </div>
+        )
       default:
         return <Dashboard />
     }

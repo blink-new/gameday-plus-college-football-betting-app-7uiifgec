@@ -8,7 +8,9 @@ import {
   BarChart3, 
   User,
   Menu,
-  X
+  X,
+  GitCompare,
+  CloudRain
 } from 'lucide-react'
 
 interface HeaderProps {
@@ -24,6 +26,8 @@ export function Header({ activeTab, onTabChange }: HeaderProps) {
     { id: 'live-games', label: 'Live Games', icon: TrendingUp },
     { id: 'my-bets', label: 'My Bets', icon: Users },
     { id: 'analytics', label: 'Analytics', icon: BarChart3 },
+    { id: 'comparison', label: 'Team Compare', icon: GitCompare },
+    { id: 'analysis', label: 'Weather & Injuries', icon: CloudRain },
   ]
 
   return (
